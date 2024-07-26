@@ -1,0 +1,20 @@
+.edu-card {
+    max-width: 70%;
+    margin: auto;
+  }
+  .collage-img{
+      width:70px;
+      height: 70px;
+  }
+  @media (min-width: 1000px) {
+    .edu-card {
+      max-width: 60%;
+      margin: 20px auto;
+    }
+}
+  @media (max-width: 840px) {
+    .edu-card {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+}

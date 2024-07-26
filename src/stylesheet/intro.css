@@ -1,0 +1,51 @@
+.profile-card {
+    max-width: 70%;
+    margin:20px auto;
+  }
+  
+  .profile-image-container {
+    left: 15px;
+    bottom: -40px;
+  }
+  
+  .profile-image {
+    width: 10rem;
+    height: 10rem;
+    border: 5px solid white;
+  }
+  
+
+  @media (min-width: 1000px) {
+    .profile-card {
+      max-width: 60%;
+      margin: 20px auto;
+    }
+}
+  @media (max-width: 840px) {
+    .profile-card {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+  
+    .profile-image-container {
+      left: 10px;
+      bottom: -60px;
+    }
+  
+    .profile-image {
+      width: 70%;
+      height: 70%;
+    }
+  
+    .card-body .btn {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  @media (max-width: 540px) {
+    .profile-image {
+        width: 55%;
+        height: 55%;
+      }
+}

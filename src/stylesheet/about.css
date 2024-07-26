@@ -1,0 +1,16 @@
+.about-card {
+    max-width: 70%;
+    margin: auto;
+  }
+  @media (min-width: 1000px) {
+    .about-card {
+      max-width: 60%;
+      margin: 20px auto;
+    }
+}
+  @media (max-width: 840px) {
+    .about-card {
+      max-width: 90%;
+      margin: 20px auto;
+    }
+}
