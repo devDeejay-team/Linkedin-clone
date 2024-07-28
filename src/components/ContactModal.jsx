@@ -18,16 +18,16 @@ const ContactModal = ({show,setShow}) => {
                 Contact Info
             </h4>
             <div className='fs-4 d-flex mb-3'>
-            <FaLinkedin /> <span className='ms-3 fs-6 d-flex flex-column'>Dhananjay's Linkedin <a href='#'>hi</a> </span>
+            <FaLinkedin /> <span className='ms-3 fs-6 d-flex flex-column'>Dhananjay's Linkedin <a href=''>hi</a> </span>
             </div>
             <div className='fs-4 d-flex mb-3'>
-            <HiLink /> <span className='ms-3 fs-6 d-flex flex-column'>Website<a href='#'>hi</a> </span>
+            <HiLink /> <span className='ms-3 fs-6 d-flex flex-column'>Website<a href=''>hi</a> </span>
             </div>
             <div className='fs-4 d-flex mb-3'>
-            <MdOutlineMailOutline /> <span className='ms-3 fs-6 d-flex flex-column'>Email<a href='#'>hi</a> </span>
+            <MdOutlineMailOutline /> <span className='ms-3 fs-6 d-flex flex-column'>Email<a href=''>hi</a> </span>
             </div>
             <div className='fs-4 d-flex mb-3'>
-            <LuCalendarDays /> <span className='ms-3 fs-6 d-flex flex-column'>Birthday<a href='#'>hi</a> </span>
+            <LuCalendarDays /> <span className='ms-3 fs-6 d-flex flex-column'>Birthday<a href=''>hi</a> </span>
             </div>
         </Modal.Body>
       </Modal>
