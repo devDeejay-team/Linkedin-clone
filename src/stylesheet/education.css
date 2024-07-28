@@ -1,10 +1,14 @@
 .edu-card {
     max-width: 70%;
-    margin: auto;
+    margin: 20px auto;
   }
   .collage-img{
       width:70px;
       height: 70px;
+  }
+  .edu-list > div:not(:last-child) {
+    border-bottom: 1px solid #ccc; /* or any color you prefer */
+    padding-bottom: 0.6rem;
   }
   @media (min-width: 1000px) {
     .edu-card {

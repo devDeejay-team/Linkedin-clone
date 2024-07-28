@@ -1,18 +1,23 @@
-.lang-card {
+.company-card {
     max-width: 70%;
     margin: 20px auto;
   }
-  .lang-list > div:not(:last-child) {
+  .company-img{
+      width:60px;
+      height: 60px;
+  }
+  .company-list > div:not(:last-child) {
     border-bottom: 1px solid #ccc; /* or any color you prefer */
+    padding-bottom: 0.6rem;
   }
   @media (min-width: 1000px) {
-    .lang-card {
+    .company-card {
       max-width: 60%;
       margin: 20px auto;
     }
 }
   @media (max-width: 840px) {
-    .lang-card {
+    .company-card {
       max-width: 90%;
       margin: 20px auto;
     }

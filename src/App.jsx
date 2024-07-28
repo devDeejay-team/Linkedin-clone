@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import LicenceCertificate from './components/LicenceCertificate'
 import Languages from './components/languages'
 import Skills from './components/Skills'
+import Experience from './components/Experience'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Header/>
+      <Experience/>
       <Education/>
       <LicenceCertificate/>
       <Skills/>
