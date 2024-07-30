@@ -6,12 +6,14 @@ import LicenceCertificate from './components/LicenceCertificate'
 import Languages from './components/languages'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
+import GoogleSignin from './components/GoogleSignin'
 
 function App() {
 
 
   return (
     <>
+    <GoogleSignin/>
       <Header/>
       <Experience/>
       <Education/>
