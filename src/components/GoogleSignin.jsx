@@ -7,7 +7,7 @@ const GoogleSignin = () => {
   return (
     <div>
       <button onClick={googleSignIn}>Sign in with Google</button>
-      <textarea
+      {/* <textarea
         placeholder="Paste your LinkedIn data here..."
         value={profileData}
         onChange={(e) => setProfileData(e.target.value)}
@@ -15,7 +15,7 @@ const GoogleSignin = () => {
       />
       <button onClick={() => console.log('Submit your data:', profileData)}>
         Submit
-      </button>
+      </button> */}
     </div>
   );
 };
