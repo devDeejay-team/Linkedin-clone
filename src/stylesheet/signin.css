@@ -1,0 +1,11 @@
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: url("../assets/bg.jpg") no-repeat center center/cover;
+    width: 100%;
+    opacity: 0.6;
+    height: 100vh;
+    z-index: -1;
+}

@@ -10,6 +10,7 @@ import Navigation from "./components/Navigation";
 
 function App() {
   return (
+    <>
     <Provider>
       <Router>
       <Navigation/>
@@ -20,6 +21,7 @@ function App() {
         </Routes>
       </Router>
     </Provider>
+    </>
   );
 }
 

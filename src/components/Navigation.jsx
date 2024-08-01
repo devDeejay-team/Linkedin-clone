@@ -17,8 +17,8 @@ const Navigation = () => {
   };
 
   return (
-    <div className="">
-      <nav className="navbar navbar-expand-lg bg-primary sticky">
+    <div className="z-1  sticky">
+      <nav className="navbar navbar-expand-lg bg-primary">
         <div className="container-fluid">
           <NavLink className="navbar-brand w-25" to="/">
             <div className="text-white fw-medium logo-text ms-3">devDeejay.in</div>

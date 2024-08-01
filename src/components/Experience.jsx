@@ -14,7 +14,7 @@ const Experience = () => {
           <img src={company} alt="img" className="company-img" />
           <small className="mx-3 fs-6 d-flex flex-column fw-medium">
             position name
-            <a href="" className="fw-normal text-decoration-none text-dark">
+            <a href="www.google.com" className="fw-normal text-decoration-none text-dark">
               company name . employment type
             </a>
             <small className="fw-normal text-muted">Address . WFH?WFO?HYBRID</small>
@@ -29,7 +29,7 @@ const Experience = () => {
           <img src={company} alt="img" className="company-img" />
           <small className="mx-3 fs-6 d-flex flex-column fw-medium">
             position name
-            <a href="" className="fw-normal text-decoration-none text-dark">
+            <a href="www.google.com" className="fw-normal text-decoration-none text-dark">
               company name . employment type
             </a>
             <small className="fw-normal text-muted">Address . WFH?WFO?HYBRID</small>

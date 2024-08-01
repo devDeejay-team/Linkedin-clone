@@ -11,7 +11,7 @@ const Education = () => {
         <div className="fs-4 d-flex mb-3">
           <img src={collage} alt="img" className="rounded collage-img" />
           <small className="ms-3 fs-6 d-flex flex-column">
-            <a href="" className="fw-normal text-decoration-none fw-medium text-dark">
+            <a href="www.google.com" className="fw-normal text-decoration-none fw-medium text-dark">
               collage name
             </a>
             degree name
@@ -21,7 +21,7 @@ const Education = () => {
         <div className="fs-4 d-flex mb-3">
           <img src={collage} alt="img" className="rounded collage-img" />
           <small className="ms-3 fs-6 d-flex flex-column">
-            <a href="" className="fw-normal text-decoration-none fw-medium text-dark">
+            <a href="www.google.com" className="fw-normal text-decoration-none fw-medium text-dark">
               collage name
             </a>
             degree name
