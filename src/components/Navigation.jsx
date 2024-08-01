@@ -20,9 +20,9 @@ const Navigation = () => {
     <div className="z-1  sticky">
       <nav className="navbar navbar-expand-lg bg-primary">
         <div className="container-fluid">
-          <NavLink className="navbar-brand w-25" to="/">
+          <a className="navbar-brand w-25" href="https://devdeejay.in/">
             <div className="text-white fw-medium logo-text ms-3">devDeejay.in</div>
-          </NavLink>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
