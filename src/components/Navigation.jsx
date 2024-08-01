@@ -46,11 +46,6 @@ const Navigation = () => {
                   Profile
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link text-white" to="/contact" onClick={handleNavLinkClick}>
-                  Contact Us
-                </NavLink>
-              </li>
               {false ? (
                 <li className="nav-item">
                   <NavLink className="nav-link text-white" to="/login" onClick={logout}>
