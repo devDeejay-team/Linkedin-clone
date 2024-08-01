@@ -1,9 +1,9 @@
 //@ts-nocheck
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup,signOut } from 'firebase/auth';
 import { auth,db } from './firebase-config';
 
 
-const googleSignIn = () => {
+export const googleSignIn = () => {
   const provider = new GoogleAuthProvider();
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -11,6 +11,7 @@ const googleSignIn = () => {
       const token = credential.accessToken;
       const user = result.user;
       console.log(user);
+      return user
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -20,4 +21,13 @@ const googleSignIn = () => {
     });
 };
 
-export default googleSignIn;
+export const googleSignOut = () => {
+  signOut(auth)
+    .then(() => {
+      console.log('User signed out');
+      // Handle redirection or further processing here
+    }).catch((error) => {
+      console.error('Error during sign-out:', error);
+    });
+};
+

@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
-import googleSignIn from '../firebase/googleSignIn';
+import { useNavigate } from 'react-router-dom';
+import {googleSignIn} from '../firebase/googleSignIn';
+import { FaGoogle } from "react-icons/fa";
 
-const GoogleSignin = () => {
-  const [profileData, setProfileData] = useState('');
+export const GoogleSignin = () => {
+  const navigate=useNavigate()
+
+  const handleSignin=()=>{
+    const result= googleSignIn()
+    if(result){
+      navigate('/profile')
+    }
+  }
 
   return (
-    <div>
-      <button onClick={googleSignIn}>Sign in with Google</button>
-      {/* <textarea
-        placeholder="Paste your LinkedIn data here..."
-        value={profileData}
-        onChange={(e) => setProfileData(e.target.value)}
-        style={{ width: '300px', height: '150px' }}
-      />
-      <button onClick={() => console.log('Submit your data:', profileData)}>
-        Submit
-      </button> */}
-    </div>
+    <>
+      <button onClick={handleSignin} className='btn btn-primary text-center shadow'><FaGoogle className='mb-1 me-2'/>Continue in with Google</button>
+    </>
   );
 };
 
-export default GoogleSignin;
