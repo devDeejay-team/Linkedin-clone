@@ -3,7 +3,7 @@ import Header from "./Header"
 import Experience from "./Experience"
 import Education from './Education'
 import LicenceCertificate from './LicenceCertificate'
-import Languages from './Languages'
+import Languages from './Languages.jsx'
 import Skills from "./Skills"
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../firebase/firebase-config'
