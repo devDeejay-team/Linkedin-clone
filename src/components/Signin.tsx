@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleSignin } from './GoogleSignin'
+import { GoogleSignin } from '../firebase/googleSignIn.tsx'
 import "../stylesheet/signin.css"
 
 const Signin = () => {

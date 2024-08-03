@@ -7,7 +7,7 @@ const Landing = () => {
       <div className='px-5 card width shadow my-5 rounded-5'>
         <div className='fs-5 my-5'>
         <h1>
-          Hello world !!
+          Hello world!!
         </h1>
           <p>Welcome to <strong>devDeejay.in,</strong> </p>
           <p>your ultimate destination for supercharging your LinkedIn profile with cutting-edge AI enhancements.</p> 
@@ -18,7 +18,7 @@ const Landing = () => {
           
         <div className='fs-5 my-5'>
         <h1>
-          What we offer ?
+          What we offer?
         </h1>
         <p>With us you can ensure that your profile is not only comprehensive but also compelling, </p>
         <p>Making a lasting impression on recruiters and potential employers.</p>
@@ -28,7 +28,7 @@ const Landing = () => {
       <div className='px-5 card width shadow my-5 rounded-5'>
         <div className='fs-5 my-5'>
         <h1>
-          Why choose us ?
+          Why choose us?
         </h1>
           <p>We want our community to grow and support them in the process.</p> 
           <p> We acknowledge your ambition to attain a prestigious position and are here to help you achieve it.</p>

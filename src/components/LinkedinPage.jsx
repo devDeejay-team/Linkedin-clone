@@ -7,23 +7,18 @@ import Skills from "./Skills"
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../firebase/firebase-config'
 import KnownLang from './KnownLang.jsx'
+import { useNavigate } from 'react-router-dom'
 
 const LinkedinPage = () => {
+  const navigate=useNavigate()
 
-  //login check fn
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //     if (currentUser) {
-  //       setUser(currentUser);
-  //       fetchUserData().then(data => setUserData(data));
-  //     } else {
-  //       setUser(null);//signout senario
-  //       setUserData(null);
-  //     }
-  //   });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if(!user)navigate("/signin")
+    });
 
-  //   return () => unsubscribe();
-  // }, []);
+    return () => unsubscribe();
+  }, []);
   return (
     <>
         <Header/>
