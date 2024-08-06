@@ -1,15 +1,14 @@
 import React from 'react'
 import Intro from './Intro'
-import About from './About'
-import Services from './Services'
+import IntroUtils from "../utils/IntroUtils"
 
 const Header = () => {
   return (
-    <div>
+    <>
         <Intro/>
-        <About/>
-        <Services/>
-    </div>
+        <IntroUtils heading={"About"} data={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ut minima iste praesentium corrupti repudiandae quisquam ab culpa dolores? Ullam tenetur rem mollitia eius sequi totam obcaecati fuga magni officiis."}/>
+        <IntroUtils heading={"Services"} data={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ut minima iste praesentium corrupti repudiandae quisquam ab culpa dolores? Ullam tenetur rem mollitia eius sequi totam obcaecati fuga magni officiis."}/>
+    </>
   )
 }
 

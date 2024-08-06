@@ -1,12 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { googleSignOut } from "../firebase/googleSignIn";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase-config";
+import Context from "../context/Context";
 
 const Navigation = () => {
   const navbarCollapseRef = useRef(null);
-  const [user,setUser]=useState(null)
+  const context=useContext(Context);
+  const {user,setUser}=context
 
   const handleNavLinkClick = () => {
     const navbarCollapse = navbarCollapseRef.current;

@@ -4,7 +4,7 @@ import "../stylesheet/education.css";
 
 const Education = () => {
   return (
-    <div className="card shadow edu-card">
+    <div className="card shadow mt-3 edu-card">
       <div className="mx-3">
         <h3 className="mt-2">Education</h3>
         <div className="edu-list">

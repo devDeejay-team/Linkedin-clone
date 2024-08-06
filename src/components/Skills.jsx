@@ -5,7 +5,7 @@ import "../stylesheet/skills.css";
 const Skills = () => {
   return (
     <>
-      <div className="card shadow skill-card">
+      <div className="card mt-3 shadow skill-card">
         <div className="mx-3 my-2">
           <h3>Skills</h3>
           <div className="skill-list">

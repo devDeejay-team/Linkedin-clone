@@ -14,7 +14,7 @@ const Intro = () => {
       <div className='position-relative'>
         <img src={profBack} alt='Profile background' className='w-100 rounded' />
         <div className='profile-image-container position-absolute'>
-          <img src={profImg} alt='Profile Image' className='rounded-circle profile-image' />
+          <img src={profImg} alt='profile-image' className='rounded-circle profile-image' />
         </div>
       </div>
       <div className='card-body mt-5'>

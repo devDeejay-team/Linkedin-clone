@@ -4,7 +4,7 @@ import "../stylesheet/knownlang.css";
 const KnownLang = () => {
   return (
     <>
-      <div className="card shadow lang-card">
+      <div className="card mt-3 shadow lang-card">
       <div className="mx-3">
         <h3 className="my-2">Languages</h3>
         <div className="lang-list mb-3">

@@ -4,7 +4,7 @@ import "../stylesheet/licence.css"
 
 const LicenceCertificate = () => {
   return (
-    <div className="card shadow licence-card">
+    <div className="card mt-3 shadow licence-card">
       <div className="mx-3">
         <h3 className="mt-2">Licence& certifications</h3>
       <div className=' licence-list mb-3'>

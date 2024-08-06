@@ -1,0 +1,12 @@
+.textarea-height{
+height: 25%;
+min-height: 350px;
+}
+
+.textarea{
+    outline: none;
+    resize: none;
+}
+.text-div{
+    min-width: 40%;
+}

@@ -1,19 +1,3 @@
-.skill-card {
-    max-width: 70%;
-    margin: 20px auto;
-  }
   .skill-list > div:not(:last-child) {
     border-bottom: 1px solid #ccc; /* or any color you prefer */
   }
-  @media (min-width: 1000px) {
-    .skill-card {
-      max-width: 60%;
-      margin: 20px auto;
-    }
-}
-  @media (max-width: 840px) {
-    .skill-card {
-      max-width: 90%;
-      margin: 20px auto;
-    }
-}
