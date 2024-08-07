@@ -22,12 +22,13 @@ const LinkedinPage = () => {
   return (
     <>
     <div className='d-flex  mx-3 flex-column flex-md-row justify-content-between'>
-    <div className='mt-4 me-md-3 text-div'>
+    <div className='mt-3 mt-md-2 me-md-3 text-div'>
       <h2>Details</h2>
-      <textarea className='w-100 rounded textarea-height textarea'></textarea>
-      <button className="btn btn-primary">Submit</button>
+      <textarea className='w-100 p-2 rounded textarea-height textarea' placeholder="Enter your profile details here" ></textarea>
+      <button className="btn btn-primary" >Submit</button>
     </div>
-    <div className='my-4 mx-auto'>
+    <div className='mt-3 mt-md-2 mx-auto'>
+    <h2>Preview</h2>
         <Header/>
         <Experience/>
           <Education />
