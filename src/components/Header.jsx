@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Intro from './Intro'
 import IntroUtils from "../utils/IntroUtils"
+import Context from '../context/Context';
 
 const Header = () => {
+  const context= useContext(Context);
+  const {profile}=context;
   return (
     <>
         <Intro/>
-        <IntroUtils heading={"About"} data={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ut minima iste praesentium corrupti repudiandae quisquam ab culpa dolores? Ullam tenetur rem mollitia eius sequi totam obcaecati fuga magni officiis."}/>
-        <IntroUtils heading={"Services"} data={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ut minima iste praesentium corrupti repudiandae quisquam ab culpa dolores? Ullam tenetur rem mollitia eius sequi totam obcaecati fuga magni officiis."}/>
+        <IntroUtils heading={"About"} data={profile.summary}/>
+        {/* <IntroUtils heading={"Services"} data={"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ut minima iste praesentium corrupti repudiandae quisquam ab culpa dolores? Ullam tenetur rem mollitia eius sequi totam obcaecati fuga magni officiis."}/> */}
     </>
   )
 }

@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import profImg from "../assets/profImg.jpg"
 import profBack from "../assets/profBack.jpg"
 import "../stylesheet/intro.css"
 import ContactModal from './ContactModal'
 import { IoIosSend } from "react-icons/io";
+import Context from '../context/Context'
 
 const Intro = () => {
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
+  const context= useContext(Context);
+  const {profile}=context;
+
   return (
     <>
     <div className='card shadow profile-card'>
@@ -18,9 +22,9 @@ const Intro = () => {
         </div>
       </div>
       <div className='card-body mt-5'>
-        <h5 className='card-title'>Dhananjay Trivedi <span className='text-muted fs-6'>(He/Him)</span></h5>
-        <p className='card-text'>AI Consultant & Product Manager | Specializing in AI Integration and Strategic Product Development (Loves Bikes, Travelling, Photography, Writing and Sharing Knowledge)</p>
-        <p className='card-text'><small className='text-muted'>Bengaluru, Karnataka, India <span onClick={handleShow} className='text-decoration-none text-primary fw-medium cursor'>Contact info</span></small></p>
+        <h5 className='card-title'>{profile?.personal_info?.first_name} {profile?.personal_info?.last_name} </h5>
+        <p className='card-text'>{profile?.personal_info?.headline}</p>
+        <p className='card-text'><small className='text-muted'>{profile?.personal_info?.location} <span onClick={handleShow} className='text-decoration-none text-primary fw-medium cursor'>Contact info</span></small></p>
         <button className='btn btn-primary me-2 rounded-pill'><IoIosSend className='fs-4 pb-1'/> Message</button>
         <button className='btn btn-outline-secondary rounded-pill'>More</button>
       </div>
