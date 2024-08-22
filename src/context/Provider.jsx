@@ -18,7 +18,7 @@ const getProfile=async(id)=>{
       },
     });
     const data=await res.json()
-    setProfile(data)
+    setProfile(data.generated_profile)
   } catch (err) {
     console.log(err);
   }finally{
@@ -39,6 +39,8 @@ const generateProfile=async(profile_text)=>{
       }),
     })
     const result=res.json()
+    console.log (result)
+    setProfile (result.generated_profile)
      localStorage.setItem("profile_id",result.profile_id)
   }catch(err){
     console.log(err);

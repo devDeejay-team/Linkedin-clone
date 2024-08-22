@@ -26,7 +26,7 @@ const LinkedinPage = () => {
     if(!user)navigate("/signin")
 
       const name = localStorage.getItem("profile_id")
-      getProfile(name)
+      // getProfile(name)
   }, []);
   return (
     <>
