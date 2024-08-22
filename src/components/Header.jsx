@@ -6,6 +6,7 @@ import Context from '../context/Context';
 const Header = () => {
   const context= useContext(Context);
   const {profile}=context;
+  console.log(profile)
   return (
     <>
         <Intro/>

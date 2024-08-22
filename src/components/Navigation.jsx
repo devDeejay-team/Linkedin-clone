@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { googleSignOut } from "../firebase/googleSignIn";
-import Context from "../context/Context";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase/firebase-config";
 
 const Navigation = () => {
   const navbarCollapseRef = useRef(null);
-  const context=useContext(Context);
-  const {user}=context
+  const [user,setUser]=useState(null)
 
   const handleNavLinkClick = () => {
     const navbarCollapse = navbarCollapseRef.current;
@@ -19,6 +19,13 @@ const Navigation = () => {
     googleSignOut()
   };
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
   return (
     <div className="z-1  sticky">
       <nav className="navbar navbar-expand-lg bg-primary">

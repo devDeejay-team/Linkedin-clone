@@ -23,10 +23,17 @@ const LinkedinPage = () => {
   }
 
   useEffect(() => {
-    if(!user)navigate("/signin")
-
-      const name = localStorage.getItem("profile_id")
-      // getProfile(name)
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        console.log('User logged in:', currentUser);
+      } else {
+        navigate("/signin")
+        console.log('No user logged in');
+      }
+    });
+    const name = localStorage.getItem("profile_id")
+    getProfile(name)
+    return () => unsubscribe();
   }, []);
   return (
     <>

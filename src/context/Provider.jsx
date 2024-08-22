@@ -4,8 +4,7 @@ import Context from './Context'
 const Provider = (props) => {
   const [profile,setProfile]=useState([])
   const [loading,setLoading]=useState(true)
-  const [user,setUser]=useState(null)
-  const host="http://127.0.0.1:8080"
+  const host="https://linkedin-copy-linkedin.onrender.com"
 
   
 const getProfile=async(id)=>{
@@ -38,7 +37,7 @@ const generateProfile=async(profile_text)=>{
         profile_text:profile_text
       }),
     })
-    const result=res.json()
+    const result=await res.json()
     console.log (result)
     setProfile (result.generated_profile)
      localStorage.setItem("profile_id",result.profile_id)
@@ -49,7 +48,7 @@ const generateProfile=async(profile_text)=>{
   }
 }
 
-  return (<Context.Provider value={{profile, loading, user, setUser, getProfile, generateProfile}}>
+  return (<Context.Provider value={{profile, loading, getProfile, generateProfile}}>
     {props.children}
   </Context.Provider>)
 }
