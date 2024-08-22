@@ -24,7 +24,9 @@ const LinkedinPage = () => {
 
   useEffect(() => {
     if(!user)navigate("/signin")
-      getProfile("5c45d25c-044f-4a96-baf5-b1e5fa03d14d")
+
+      const name = localStorage.getItem("profile_id")
+      getProfile(name)
   }, []);
   return (
     <>
