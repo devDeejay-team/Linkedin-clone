@@ -7,6 +7,7 @@ import { auth } from "../firebase/firebase-config";
 const Navigation = () => {
   const navbarCollapseRef = useRef(null);
   const [user,setUser]=useState(null)
+  const [loading, setLoading]=useState(true)
 
   const handleNavLinkClick = () => {
     const navbarCollapse = navbarCollapseRef.current;
@@ -18,16 +19,18 @@ const Navigation = () => {
   const logout = () => {
     googleSignOut()
   };
-
+  console.log(user)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
+      setLoading(false)
     });
 
     return () => unsubscribe();
   }, []);
   return (
-    <div className="z-1  sticky">
+    <>
+    {!loading&&<div className="z-1  sticky">
       <nav className="navbar navbar-expand-lg bg-primary">
         <div className="container-fluid">
           <a className="navbar-brand w-25" href="https://devdeejay.in/">
@@ -75,7 +78,8 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
-    </div>
+    </div>}
+    </>
   );
 };
 

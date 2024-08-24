@@ -41,7 +41,7 @@ const LinkedinPage = () => {
     <div className='mt-3 mt-md-2 me-md-3 text-div'>
       <h2>Details</h2>
       <textarea className='w-100 p-2 rounded textarea-height textarea' placeholder="Enter your profile details here" onChange={(e)=>{setProfileText(e.target.value)}} value={profileText} ></textarea>
-      <button className="btn btn-primary" onClick={handelSubmit} >Submit</button>
+      <button className="btn btn-primary mt-2" onClick={handelSubmit} >Submit</button>
     </div>
     <div className='mt-3 mt-md-2 mx-auto'>
     <h2>Preview</h2>
