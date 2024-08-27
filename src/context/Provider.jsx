@@ -5,15 +5,17 @@ const Provider = (props) => {
   const [profile,setProfile]=useState([])
   const [loading,setLoading]=useState(true)
   const host="https://linkedin-copy-linkedin.onrender.com"
+  const token = localStorage.getItem('auth_token');
 
   
-const getProfile=async(id)=>{
+const getProfile=async()=>{
   setLoading(true);
   try {
-    const res = await fetch(`${host}/get-profile/${id}`, {
+    const res = await fetch(`${host}/get-profile`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
       },
     });
     const data=await res.json()
@@ -32,6 +34,7 @@ const generateProfile=async(profile_text)=>{
       method:"post",
       headers:{
         "Content-Type":"application/json",
+        "Authorization": `Bearer ${token}`,
       },
       body:JSON.stringify({
         profile_text:profile_text
