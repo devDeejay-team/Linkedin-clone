@@ -8,10 +8,10 @@ const Provider = (props) => {
   const token = localStorage.getItem('auth_token');
 
   
-const getProfile=async()=>{
+const getProfile=async(id)=>{
   setLoading(true);
   try {
-    const res = await fetch(`${host}/get-profile`, {
+    const res = await fetch(`${host}/get-profile/${id}`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",

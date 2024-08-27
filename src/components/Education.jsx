@@ -8,7 +8,7 @@ const Education = () => {
   const context=useContext(Context)
   const {profile}=context
   return (
-    <div className="card shadow mt-2 edu-card">
+    <div className="card shadow mt-3 edu-card">
       <div className="mx-3 my-2">
         <h3>Education</h3>
         <div className="edu-list">

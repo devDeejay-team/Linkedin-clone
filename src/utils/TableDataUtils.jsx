@@ -5,7 +5,7 @@ const TableDataUtils = ({boldName,name1,name2,address,empType,desc,date,img}) =>
   return (
     <>
      <div className='company-list mb-2'>
-     <div className=" fs-4 d-flex mt-2">
+     <div className=" fs-4 d-flex my-3">
        {img&&<img src={img} alt="img" className="company-img" />}
        <small className="mx-3 fs-6 d-flex flex-column fw-medium">
          {boldName}
