@@ -7,7 +7,6 @@ import Context from '../context/Context'
 const LicenceCertificate = () => {
   const context=useContext(Context)
   const {profile}=context
-  console.log(profile?.certifications)
   return (
     <div className="card mt-3 shadow licence-card">
       <div className="mx-3 my-2">

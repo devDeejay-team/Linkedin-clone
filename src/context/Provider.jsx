@@ -19,7 +19,7 @@ const getProfile=async(id)=>{
       },
     });
     const data=await res.json()
-    setProfile(data.generated_profile)
+    setProfile(data.profileData)
   } catch (err) {
     console.log(err);
   }finally{

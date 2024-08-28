@@ -25,7 +25,7 @@ const LinkedinPage = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        console.log('User logged in:', currentUser);
+        console.log('User logged in:');
       } else {
         navigate("/signin")
         console.log('No user logged in');

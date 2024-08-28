@@ -19,7 +19,6 @@ const Navigation = () => {
   const logout = () => {
     googleSignOut()
   };
-  console.log(user)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
