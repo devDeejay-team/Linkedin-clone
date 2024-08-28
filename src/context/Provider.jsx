@@ -4,14 +4,14 @@ import Context from './Context'
 const Provider = (props) => {
   const [profile,setProfile]=useState([])
   const [loading,setLoading]=useState(true)
-  const host="https://linkedin-copy-linkedin.onrender.com"
+  const host="http://localhost:5000"
   const token = localStorage.getItem('auth_token');
 
   
 const getProfile=async(id)=>{
   setLoading(true);
   try {
-    const res = await fetch(`${host}/get-profile/${id}`, {
+    const res = await fetch(`${host}/api/profile`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const getProfile=async(id)=>{
 const generateProfile=async(profile_text)=>{
   setLoading(true);
   try{
-    const res =await fetch(`${host}/generate-profile`,{
+    const res =await fetch(`${host}/api/profile`,{
       method:"post",
       headers:{
         "Content-Type":"application/json",

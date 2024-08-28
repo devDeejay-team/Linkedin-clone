@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "linkedin-profile-generator-api",
+  "private_key_id": "e8f8d700b79d7f02bc8eee0a707523c4040a0500",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC171BPN3q2qSd4\nIigL1aX2YkvvaUMaSKgXAnZxppPpbyyEHfZrEAsMGLvbVdREFjy+K379MHLaNip+\n+bKoImZr+md6e0Id/QOylFWiV6MWhwwaWd3GpOpV0889YlL7XEFhYi9umulZN4Ka\nAWganeYU+ybN6lNg93JsRlmvtjFYgzNAzCKMH8XsioCDJGN2nvbv7TcIqVcyvpzA\noTHGziS6s5mCIAac7DdcwkKrZcLHPLwKNtNOszmUAkm5sCii1T4ubf3f2vFxb0sW\nFDaRnWI002Vv/8t5M+uKAy1520HUJpmGXE73PEHtGLkmr8A3Hx/DeGu0ncLMrRXy\nFIoU+NK1AgMBAAECggEACrxn2s+FTZ4cbCRn2eWY+ORtYrVYIQbvPwcFgki4KxWa\nZOQiachKk+4pt78QMEG3rT6CgeJdWgR0QYXumv6yAzva5glmqhUHe37xXAvGiJ/I\n1mKTNGkAQwxQCxPwSFD2CA8eiW0EHsr9yU9n8JonZ6Q3x/2Z6fuazvTfz1SgWNQG\nXzC0qH8DziOg2YGPO1iPVnO5ZNR1a+p1XHAAuRZGD5i/TxltlJouaK7GQRGrBTw8\nBJobiuoJPKpfVd4ttaU2nWNBeDnkUuwCiJEcyBiaxPkDtxEw12GAhiMIkSWZi4uY\nAXU6D/MBWc+TY9BL2H7CSLpsINsmACDlZ4LlHzFDiQKBgQDdGOT0cqYyHD8TsW9b\nCF6TtRfcFA0EtAkEZGYWHvU7j4nmSCdyCrdMULWvo5pfyZGFqhQiTcfLWLBUL8rG\nmhiETI4hP9JY+TJPnumdnJkvp0B11BvkLr1f/XtCMoX7LrjK3cbUuQ+ZTWbonBHk\nI07dPn0nuXmQDqiQgqvIPN3VPwKBgQDSp8P5X1rXvflSRBDdCOXgDTh7cWB3ApQl\n6kjMxEoeC5mv4fhydNTpcgAGABOqjfrqxOBxNjZ8e8a6WA+ZeTVcdnhGe+OT9Wnx\naORAtGf2hQbouB4pXDmQNN+PNfqWIytJ2EuilqEToUQdi5BsJ5aHqVeeJJVhQmS2\nTfuUvLgXCwKBgGHFYXHrxSzBqu8Vds3FvLUKzvtGbp9W0en8T9yWYhGtnuiTncXj\nkT0RL9b0vQ6Av3ZhSLgGt0Rn+smvvLboa9ENXYi8hVNNF394IYzONDuLdYjlfFQC\ni0IIgNo8J111QsiLHCLzlz9OqCRS5+J/7p8NxCCt92DJ6qbE8hwBNoPXAoGBAKWK\n7XkVNGCCjGHX16C8E1olSZPIn1QnFKFPIfK49r3xw87yN7pKkd76lYYhnVLUzLCe\nEvsk7WCaLKvX9DpZhFOrTg2l4kwt+hmaonUu0Nxr4egUeK9sKFhpFJ6IfupprOUV\nMysMUH0KqGrHeLFl0ue9bnt6qGGMOXUCh4h1Xf3NAoGAXvtiPABwxDbRKBS7IyHk\n1bN816qRvsOYOLU0opnepW+yCDMuHWzJ3Y3wPhdsgNUQNfj9PeIXxs9JPp1+Ybop\nDVQpi4lJQLmf9Sq+Te9wmBs7GmbQLtboxAAgMGtkmvq5nEsgGbsQHDe3MCgUSqJq\nrqkES+mJr9aQYe9H5nm8MPU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-18ghq@linkedin-profile-generator-api.iam.gserviceaccount.com",
+  "client_id": "112604814152593008709",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-18ghq%40linkedin-profile-generator-api.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
