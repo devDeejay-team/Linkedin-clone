@@ -23,9 +23,6 @@ export const GoogleSignin = () => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
-      const idToken = await user.getIdToken(); // Get the ID Token
-      localStorage.setItem("auth_token", idToken);
-    console.log("ID Token:", idToken);
       console.log(user);
 
       // Ensure user is defined before navigating

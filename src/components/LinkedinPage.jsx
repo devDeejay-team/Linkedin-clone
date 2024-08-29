@@ -31,10 +31,9 @@ const LinkedinPage = () => {
         console.log('No user logged in');
       }
     });
-    const name = localStorage.getItem("profile_id")
-    getProfile(name)
+    getProfile()
     return () => unsubscribe();
-  }, []);
+  }, [user]);
   return (
     <>
     {loading?<Spinner/>:<div className='d-flex mb-3 mx-3 flex-column flex-md-row justify-content-between'>
