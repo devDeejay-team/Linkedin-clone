@@ -8,6 +8,11 @@ const app = express();
 app.use(cors({origin: '*'}));
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url} - ${res.statusCode}`);
+  next();
+});
+
 app.use('/api', profileRoutes);
 
 const PORT = process.env.PORT || 5000;
