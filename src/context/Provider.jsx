@@ -54,7 +54,7 @@ const Provider = (props) => {
     }
   }
 
-  const generateProfile = async (profile_text) => {
+  const generateProfile = async (profileData) => {
     if (!user) {
       console.log('No user is logged in.');
       return;
@@ -72,12 +72,12 @@ const Provider = (props) => {
           "Authorization": `Bearer ${token}`,
         },
         body: JSON.stringify({
-          profile_text: profile_text
+          profileData: profileData
         }),
       });
       const result = await res.json();
       if (res.status === 200) {
-        setProfile(result.generated_profile);
+        setProfile(result.generatedProfile);
       } else {
         console.log(`Failed to generate profile: ${result.message}`);
       }

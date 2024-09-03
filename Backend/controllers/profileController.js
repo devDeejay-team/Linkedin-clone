@@ -2,37 +2,76 @@ const { db } = require('../config/firebaseConfig');
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
-  apiKey:process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
-const sendToChatGPT = async (text) => {
+const sendToChatGPT = async (existingData, newData) => {
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4",
       messages: [
-        {role: 'user', content:`Generate a LinkedIn profile based on the following information:
-    ${text}
+        {
+          role: 'user',
+          content: `Here is an existing LinkedIn profile:
+          ${JSON.stringify(existingData)}
 
-    Please provide a complete LinkedIn profile in the following JSON format:
+          Based on the following new information, please update the LinkedIn profile:
+          ${JSON.stringify(newData)}
 
-    {{"personal_info": {{"first_name": "","last_name": "","email": "","location": "","headline": ""}},
-        "about": "",
-        "experience": [{{"designation": "","company": "","duration": "","location": "","description": "","job type": ""}}],
-        "education": [ {{"institution": "","degree": "","graduation_year": ""}}],
-        "certifications": [{{"Certificate name": "","issued by": "","issued date": ""}}],
-        "skills": [],
-        "languages": []
-    }}
+          Please provide an updated LinkedIn profile in the following JSON format:
 
-    Ensure all fields are filled based on the information provided in the input text.
-    Follow the json for that i provided you, make linkedin profile in same structure as provided json.
-    If any information is missing, use reasonable assumptions or leave the field empty.
-    Make the profile compelling, achievement-oriented, and attractive to recruiters.
-    `}
+          {
+            "personal_info": {
+              "first_name": "",
+              "last_name": "",
+              "email": "",
+              "location": "",
+              "headline": ""
+            },
+            "about": "",
+            "experience": [
+              {
+                "designation": "",
+                "company": "",
+                "duration": "",
+                "location": "",
+                "description": "",
+                "job type": ""
+              }
+            ],
+            "education": [
+              {
+                "institution": "",
+                "degree": "",
+                "graduation_year": ""
+              }
+            ],
+            "certifications": [
+              {
+                "Certificate name": "",
+                "issued by": "",
+                "issued date": ""
+              }
+            ],
+            "skills": [],
+            "languages": []
+          }
+
+          Ensure all fields are updated with the new information, but retain and improve upon existing information where appropriate.`,
+        },
       ],
     });
 
-    return JSON.parse(response.choices[0].message.content.trim());
+    const responseContent = response.choices[0].message.content.trim();
+
+    // Extract the JSON block using regex
+    const jsonString = responseContent.match(/{[\s\S]*}/)?.[0];
+
+    if (jsonString) {
+      return JSON.parse(jsonString);
+    } else {
+      throw new Error('No valid JSON found in the response');
+    }
   } catch (error) {
     console.error(error);
     throw new Error('Error communicating with ChatGPT');
@@ -47,29 +86,30 @@ const updateProfile = async (req, res) => {
     const userProfileRef = db.collection('profiles').doc(userId);
     const userProfile = await userProfileRef.get();
 
-    let combinedData = profileData;
-
+    let existingProfileData = {};
     if (userProfile.exists) {
-      const previousData = userProfile.data().profileData;
-      combinedData = `${previousData}\n\nNew Info: ${profileData}`;
+      existingProfileData = userProfile.data().profileData;
     }
 
-    const generated_profile = await sendToChatGPT(combinedData);
+    // Send both the existing profile data and the new profile data to ChatGPT
+    const generatedProfile = await sendToChatGPT(existingProfileData, profileData);
 
+    // Update Firestore with the new generated profile
     if (userProfile.exists) {
       await userProfileRef.update({
-        profileData: generated_profile,
-        updatedAt: new Date()
+        profileData: generatedProfile,
+        updatedAt: new Date(),
       });
     } else {
       await userProfileRef.set({
-        profileData: generated_profile,
-        createdAt: new Date()
+        profileData: generatedProfile,
+        createdAt: new Date(),
       });
     }
-    res.status(200).json({ message: 'Profile updated successfully!',generated_profile });
+
+    res.status(200).json({ message: 'Profile updated successfully!', generatedProfile });
   } catch (error) {
-    console.log(error)
+    console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
@@ -87,7 +127,7 @@ const getProfile = async (req, res) => {
 
     res.status(200).json(userProfile.data());
   } catch (error) {
-    console.log(error)
+    console.error(error);
     res.status(500).json({ error: error.message });
   }
 };
