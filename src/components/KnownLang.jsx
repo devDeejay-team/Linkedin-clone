@@ -8,12 +8,12 @@ const KnownLang = () => {
   return (
     <>
       <div className="card mt-3 shadow lang-card">
-      <div className="mx-3">
-        <h3 className="mt-2">Languages</h3>
+      <div className="mx-3 my-2">
+        <h3>Languages</h3>
         <div className="lang-list">
           {profile?.languages?.map((lang,index)=>{
             return(
-              <div key={index} className="mb-2 pb-2 fw-medium">{lang}</div>
+              <div key={index} className="pb-2 fw-medium">{lang}</div>
             )
           })}
         </div>

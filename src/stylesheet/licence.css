@@ -4,5 +4,4 @@
   }
   .licence-list > div:not(:last-child) {
     border-bottom: 1px solid #ccc; 
-    padding-bottom: 0.6rem;/* or any color you prefer */
   }

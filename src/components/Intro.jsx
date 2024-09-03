@@ -25,8 +25,8 @@ const Intro = () => {
         <h5 className='card-title'>{profile?.personal_info?.first_name} {profile?.personal_info?.last_name} </h5>
         <p className='card-text'>{profile?.personal_info?.headline}</p>
         <p className='card-text'><small className='text-muted'>{profile?.personal_info?.location} <span onClick={handleShow} className='text-decoration-none text-primary fw-medium cursor'>Contact info</span></small></p>
-        <button className='btn btn-primary me-2 rounded-pill'><IoIosSend className='fs-4 pb-1'/> Message</button>
-        <button className='btn btn-outline-secondary rounded-pill'>More</button>
+        <button className='btn btn-primary me-2 rounded-pill'><IoIosSend className='fs-4 pb-1'/> Share</button>
+        {/* <button className='btn btn-outline-secondary rounded-pill'>More</button> */}
       </div>
     </div>
     <ContactModal show={show} setShow={setShow}/>

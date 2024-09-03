@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import certimage from "../assets/crtiimage.jpg"
+import placeholder from "../assets/placeholder.svg"
 import "../stylesheet/licence.css"
 import TableDataUtils from '../utils/TableDataUtils'
 import Context from '../context/Context'
@@ -9,13 +9,13 @@ const LicenceCertificate = () => {
   const {profile}=context
   return (
     <div className="card mt-3 shadow licence-card">
-      <div className="mx-3">
-        <h3 className="mt-2">Licence& certifications</h3>
-      <div className=' licence-list mb-3'>
+      <div className="mx-3 my-2">
+        <h3>Licence& certifications</h3>
+      <div className=' licence-list'>
       {profile?.certifications?.map((certificate,index)=>{
             return(
               <div key={index}>
-              <TableDataUtils boldName={certificate["Certificate name"]} address={certificate['issued by']} date={certificate["issued date"]} img={certimage}/>
+              <TableDataUtils boldName={certificate["Certificate name"]} address={certificate['issued by']} date={certificate["issued date"]} img={placeholder}/>
               </div>
             )
           })}

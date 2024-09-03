@@ -25,23 +25,22 @@ const LinkedinPage = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
-        console.log('User logged in:', currentUser);
+        console.log('User logged in:');
       } else {
         navigate("/signin")
         console.log('No user logged in');
       }
     });
-    const name = localStorage.getItem("profile_id")
-    getProfile(name)
+    getProfile()
     return () => unsubscribe();
-  }, []);
+  }, [user]);
   return (
     <>
     {loading?<Spinner/>:<div className='d-flex mb-3 mx-3 flex-column flex-md-row justify-content-between'>
     <div className='mt-3 mt-md-2 me-md-3 text-div'>
       <h2>Details</h2>
       <textarea className='w-100 p-2 rounded textarea-height textarea' placeholder="Enter your profile details here" onChange={(e)=>{setProfileText(e.target.value)}} value={profileText} ></textarea>
-      <button className="btn btn-primary" onClick={handelSubmit} >Submit</button>
+      <button className="btn btn-primary mt-2" onClick={handelSubmit} >Submit</button>
     </div>
     <div className='mt-3 mt-md-2 mx-auto'>
     <h2>Preview</h2>

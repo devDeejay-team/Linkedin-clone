@@ -5,5 +5,4 @@
   }
   .company-list > div:not(:last-child) {
     border-bottom: 1px solid #ccc; /* or any color you prefer */
-    padding-bottom: 0.6rem;
   }
