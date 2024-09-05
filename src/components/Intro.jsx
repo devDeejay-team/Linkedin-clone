@@ -76,7 +76,7 @@ const user = auth.currentUser;
               </span>
             </small>
           </p>
-          <button className="btn btn-primary me-2 rounded-pill" onClick={handleShare}>
+          <button className="btn btn-primary pe-4 rounded-pill" onClick={handleShare}>
             <IoIosSend className="fs-4 pb-1" /> Share
           </button>
           {/* <button className='btn btn-outline-secondary rounded-pill'>More</button> */}
