@@ -5,7 +5,7 @@ import Education from "./Education";
 import LicenceCertificate from "./LicenceCertificate";
 import Skills from "./Skills";
 import KnownLang from "./KnownLang.jsx";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import Context from "../context/Context.js";
 import "../stylesheet/linkedinpage.css";
 import Spinner from "./Spinner.jsx";
@@ -14,20 +14,27 @@ const LinkedinPage = ({ user }) => {
   const navigate = useNavigate();
   const context = useContext(Context);
   const [profileText, setProfileText] = useState("");
-  const { getProfile, generateProfile, loading } = context;
+  const { getProfile, generateProfile, getProfileById, loading } = context;
+  const query = new URLSearchParams(useLocation().search);
+  const id = query.get("id");
 
   const handelSubmit = () => {
     generateProfile(profileText);
   };
 
   useEffect(() => {
-    if (user) {
+    if (user || id) {
       console.log("User logged in:");
     } else {
       navigate("/signin");
       console.log("No user logged in");
     }
-    getProfile();
+    
+    if(id){
+      getProfileById(id)
+    }else{
+      getProfile();
+    }
   }, [user]);
 
   return (

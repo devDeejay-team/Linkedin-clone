@@ -131,5 +131,22 @@ const getProfile = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+const getProfileBYId = async (req, res) => {
+  const userId = req.params.id;
 
-module.exports = { updateProfile, getProfile };
+  try {
+    const userProfileRef = db.collection('profiles').doc(userId);
+    const userProfile = await userProfileRef.get();
+
+    if (!userProfile.exists) {
+      return res.status(404).json({ message: 'Profile not found' });
+    }
+
+    res.status(200).json(userProfile.data());
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { updateProfile, getProfile, getProfileBYId };
