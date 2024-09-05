@@ -53,6 +53,29 @@ const Provider = (props) => {
       setLoading(false);
     }
   }
+  const getProfileById = async (id) => {
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${host}/api/profile/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      if (res.status === 200) {
+        setProfile(data.profileData);
+      } else {
+        console.log(`Failed to fetch profile: ${data.message}`);
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const generateProfile = async (profileData) => {
     if (!user) {
@@ -89,7 +112,7 @@ const Provider = (props) => {
   }
 
   return (
-    <Context.Provider value={{ profile, loading, user, setUser, getProfile, generateProfile }}>
+    <Context.Provider value={{ profile, loading, user, setUser, getProfile, generateProfile, getProfileById }}>
       {props.children}
     </Context.Provider>
   )

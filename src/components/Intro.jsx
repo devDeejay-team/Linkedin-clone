@@ -5,12 +5,42 @@ import "../stylesheet/intro.css";
 import ContactModal from "./ContactModal";
 import { IoIosSend } from "react-icons/io";
 import Context from "../context/Context";
+import { getAuth } from "firebase/auth";
+import { useLocation} from "react-router-dom";
 
 const Intro = () => {
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
   const context = useContext(Context);
   const { profile } = context;
+  const query = new URLSearchParams(useLocation().search);
+  const id = query.get("id");
+
+  const auth = getAuth();
+const user = auth.currentUser;
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      let url = "";
+      if (!id) {
+        url = window.location.href + `?id=${user.uid}`;
+      } else {
+        url = window.location.href;
+      }
+      try {
+        await navigator.share({
+          title: "Hi!! check out my profile!",
+          text: "Hi!! check out my profile.",
+          url: url,
+        });
+        console.log("Successfully shared");
+      } catch (error) {
+        console.error("Error sharing", error);
+      }
+    } else {
+      alert("Sharing not supported");
+    }
+  };
 
   return (
     <>
@@ -46,7 +76,7 @@ const Intro = () => {
               </span>
             </small>
           </p>
-          <button className="btn btn-primary me-2 rounded-pill">
+          <button className="btn btn-primary me-2 rounded-pill" onClick={handleShare}>
             <IoIosSend className="fs-4 pb-1" /> Share
           </button>
           {/* <button className='btn btn-outline-secondary rounded-pill'>More</button> */}
