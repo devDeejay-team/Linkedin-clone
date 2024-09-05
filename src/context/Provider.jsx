@@ -5,7 +5,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 const Provider = (props) => {
   const [profile, setProfile] = useState([])
   const [loading, setLoading] = useState(true)
-  const host = "http://localhost:5000"
+  const host = "https://linkedin-clone-g330.onrender.com"
   const [user, setUser] = useState(null)
   
   useEffect(() => {
