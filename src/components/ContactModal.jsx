@@ -1,11 +1,8 @@
 import Modal from 'react-bootstrap/Modal';
 import React from 'react'
-import { FaLinkedin } from "react-icons/fa";
-import { HiLink } from "react-icons/hi";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { LuCalendarDays } from "react-icons/lu";
 
-const ContactModal = ({show,setShow}) => {
+const ContactModal = ({show,setShow,email}) => {
     const handleClose = () => setShow(false);
   return (
     <>
@@ -19,10 +16,7 @@ const ContactModal = ({show,setShow}) => {
                 Contact Info
             </h4>
             <div className='fs-4 d-flex mb-3'>
-            <HiLink /> <span className='ms-3 fs-6 d-flex flex-column'>Website<a href='www.google.com'>hi</a> </span>
-            </div>
-            <div className='fs-4 d-flex mb-3'>
-            <MdOutlineMailOutline /> <span className='ms-3 fs-6 d-flex flex-column'>Email<a href='www.google.com'>hi</a> </span>
+            <MdOutlineMailOutline /> <span className='ms-3 fs-6 d-flex flex-column'>Email<a href={`mailto:${email}`}>{email}</a> </span>
             </div>
         </Modal.Body>
       </Modal>

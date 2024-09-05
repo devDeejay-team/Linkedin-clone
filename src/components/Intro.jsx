@@ -29,7 +29,7 @@ const Intro = () => {
         {/* <button className='btn btn-outline-secondary rounded-pill'>More</button> */}
       </div>
     </div>
-    <ContactModal show={show} setShow={setShow}/>
+    <ContactModal show={show} setShow={setShow} email={profile?.personal_info?.email}/>
     </>
   )
 }
