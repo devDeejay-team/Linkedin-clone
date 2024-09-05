@@ -16,7 +16,7 @@ const ContactModal = ({show,setShow,email}) => {
                 Contact Info
             </h4>
             <div className='fs-4 d-flex mb-3'>
-            <MdOutlineMailOutline /> <span className='ms-3 fs-6 d-flex flex-column'>Email<a href={`mailto:${email}`}>{email}</a> </span>
+            <MdOutlineMailOutline /> <span className='ms-3 fs-6 d-flex flex-column'>Email<a href={`mailto:${email}`}>{email?email:"No info"}</a> </span>
             </div>
         </Modal.Body>
       </Modal>
