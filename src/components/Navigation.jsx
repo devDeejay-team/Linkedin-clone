@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { googleSignOut } from "../firebase/googleSignIn";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase/firebase-config";
 
-const Navigation = () => {
+const Navigation = ({user}) => {
   const navbarCollapseRef = useRef(null);
-  const [user,setUser]=useState(null)
-  const [loading, setLoading]=useState(true)
+
 
   const handleNavLinkClick = () => {
     const navbarCollapse = navbarCollapseRef.current;
@@ -19,17 +16,10 @@ const Navigation = () => {
   const logout = () => {
     googleSignOut()
   };
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
-      setLoading(false)
-    });
-
-    return () => unsubscribe();
-  }, []);
+  
   return (
     <>
-    {!loading&&<div className="z-1  sticky">
+    <div className="z-1  sticky">
       <nav className="navbar navbar-expand-lg bg-primary">
         <div className="container-fluid">
           <a className="navbar-brand w-25" href="https://devdeejay.in/">
@@ -77,7 +67,7 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
-    </div>}
+    </div>
     </>
   );
 };
