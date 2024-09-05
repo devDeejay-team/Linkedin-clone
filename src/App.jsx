@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing/>}/>
           <Route path="/signin" element={<Signin/>}/>
-          <Route path="/profile" element={<LinkedinPage/>}/>
+          <Route path="/profile" element={<LinkedinPage user={user}/>}/>
         </Routes>
       </Router>}
     </>
