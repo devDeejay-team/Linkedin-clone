@@ -20,12 +20,8 @@ export const GoogleSignin = () => {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
       const user = result.user;
-      console.log(user);
 
-      // Ensure user is defined before navigating
       if (user) {
         console.log('Navigating to /profile');
         navigate('/profile');
