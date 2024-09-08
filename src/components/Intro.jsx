@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import profImg from "../assets/profImg.jpg";
-import profBack from "../assets/profBack.jpg";
+import profImg from "../assets/profileImg.avif";
+import profBack from "../assets/profileBack.webp";
 import "../stylesheet/intro.css";
 import ContactModal from "./ContactModal";
 import { IoIosSend } from "react-icons/io";
@@ -49,7 +49,7 @@ const user = auth.currentUser;
           <img
             src={profBack}
             alt="Profile background"
-            className="w-100 rounded"
+            className="w-100 rounded-top"
           />
           <div className="profile-image-container position-absolute">
             <img

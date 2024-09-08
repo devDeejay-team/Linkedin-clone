@@ -45,7 +45,7 @@ const LinkedinPage = ({ user }) => {
       ) : (
         <div className="d-flex mb-3 mx-3 flex-column flex-md-row justify-content-between">
           {!id&&<Prompt profileText={profileText} setProfileText={setProfileText} handelSubmit={handelSubmit}/>}
-          <div className="mt-3 mt-md-2 mx-auto w-75">
+          <div className="mt-3 mt-md-2 mx-auto custom-width">
             {!id&&<h2>Preview</h2>}
             <Header />
             <Experience />
