@@ -29,7 +29,6 @@ const user = auth.currentUser;
       }
       try {
         await navigator.share({
-          title: "Hi!! check out my profile!",
           text: "Hi!! check out my profile.",
           url: url,
         });
