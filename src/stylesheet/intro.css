@@ -1,25 +1,19 @@
   .profile-image-container {
-    left: 15px;
-    bottom: -45px;
+    left: 5px;
+    bottom: -55px;
   }
   
   .profile-image {
-    width: 9rem;
-    height: 9rem;
-    border: 5px solid white;
+    aspect-ratio: 1/1;
+    width: 8rem;
   }
   
 
   @media (max-width: 840px) {
   
     .profile-image-container {
-      left: 10px;
-      bottom: -60px;
-    }
-  
-    .profile-image {
-      width: 70%;
-      height: 70%;
+      left: 5px;
+      bottom: -50px;
     }
   
     .card-body .btn {
@@ -28,9 +22,9 @@
       margin-bottom: 10px;
     }
   }
-  @media (max-width: 540px) {
+
+  @media (max-width:430px){
     .profile-image {
-        width: 55%;
-        height: 55%;
-      }
-}
+      width: 6.5rem;
+    }
+  }

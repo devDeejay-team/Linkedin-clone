@@ -9,6 +9,7 @@ import { useLocation, useNavigate} from "react-router-dom";
 import Context from "../context/Context.js";
 import "../stylesheet/linkedinpage.css";
 import Spinner from "./Spinner.jsx";
+import Prompt from "./Prompt.tsx";
 
 const LinkedinPage = ({ user }) => {
   const navigate = useNavigate();
@@ -43,22 +44,9 @@ const LinkedinPage = ({ user }) => {
         <Spinner />
       ) : (
         <div className="d-flex mb-3 mx-3 flex-column flex-md-row justify-content-between">
-          <div className="mt-3 mt-md-2 me-md-3 text-div">
-            <h2>Details</h2>
-            <textarea
-              className="w-100 p-2 rounded textarea-height textarea"
-              placeholder="Enter your profile details here"
-              onChange={(e) => {
-                setProfileText(e.target.value);
-              }}
-              value={profileText}
-            ></textarea>
-            <button className="btn btn-primary mt-2" onClick={handelSubmit}>
-              Submit
-            </button>
-          </div>
-          <div className="mt-3 mt-md-2 mx-auto">
-            <h2>Preview</h2>
+          {!id&&<Prompt profileText={profileText} setProfileText={setProfileText} handelSubmit={handelSubmit}/>}
+          <div className="mt-3 mt-md-2 mx-auto custom-width">
+            {!id&&<h2>Preview</h2>}
             <Header />
             <Experience />
             <Education />

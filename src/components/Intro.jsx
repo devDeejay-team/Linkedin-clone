@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import profImg from "../assets/profImg.jpg";
-import profBack from "../assets/profBack.jpg";
+import profImg from "../assets/profileImg.avif";
+import profBack from "../assets/profileBack.webp";
 import "../stylesheet/intro.css";
 import ContactModal from "./ContactModal";
 import { IoIosSend } from "react-icons/io";
@@ -29,7 +29,6 @@ const user = auth.currentUser;
       }
       try {
         await navigator.share({
-          title: "Hi!! check out my profile!",
           text: "Hi!! check out my profile.",
           url: url,
         });
@@ -49,7 +48,7 @@ const user = auth.currentUser;
           <img
             src={profBack}
             alt="Profile background"
-            className="w-100 rounded"
+            className="w-100 rounded-top"
           />
           <div className="profile-image-container position-absolute">
             <img
@@ -76,7 +75,7 @@ const user = auth.currentUser;
               </span>
             </small>
           </p>
-          <button className="btn btn-primary me-2 rounded-pill" onClick={handleShare}>
+          <button className="btn btn-primary pe-4 rounded-pill" onClick={handleShare}>
             <IoIosSend className="fs-4 pb-1" /> Share
           </button>
           {/* <button className='btn btn-outline-secondary rounded-pill'>More</button> */}
